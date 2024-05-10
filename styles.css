@@ -81,7 +81,6 @@ nav a:hover::before {
 
 /* Hero Section Styles */
 .hero {
-  background-image: linear-gradient(to bottom, rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), url('https://via.placeholder.com/1920x1080?text=Ocean+Background');
   background-size: cover;
   background-position: center;
   min-height: 100vh;
@@ -108,7 +107,7 @@ nav a:hover::before {
 .hero-content {
   max-width: 800px;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.507);
   backdrop-filter: blur(10px);
   border-radius: 25px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
@@ -178,7 +177,7 @@ nav a:hover::before {
 
 /* Tokenomics Section Styles */
 .tokenomics {
-  background-color: #0a192f;
+  background-color: #0a192f48;
   color: #fff;
   padding: 50px;
   text-align: center;
@@ -188,7 +187,7 @@ nav a:hover::before {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.212);
   backdrop-filter: blur(10px);
   border-radius: 25px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
@@ -273,7 +272,7 @@ nav a:hover::before {
 /* Roadmap Section Styles */
 .roadmap {
   padding: 50px;
-  background-color: #0a192f;
+  background-color: #0a192fad;
 }
 
 .roadmap-content {

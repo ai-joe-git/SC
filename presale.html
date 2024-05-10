@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DNB Token Presale</title>
+    <title>STOCKSQUAWK Token Presale</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <style>
         body {
@@ -109,13 +109,24 @@
     <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
 </head>
 <body>
+    <link rel="icon" href="nancy-pelosi-head.png">
     <div class="container animate__animated animate__fadeInUp">
-        <h1>DNB Token</h1>
-        <p>'DO NOT BUY' Token Presale</p>
+        <h1>$STOCKSQUAWK</h1>
+        <p>'SpeakerCoin' Token Presale</p>
         <p>Please connect your Ethereum wallet to participate.</p>
+        <style>
+            body {
+              background-image: url('download3.webp');
+              background-size: cover;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-attachment: fixed;
+            }
+          </style>
+        
         <p><button id="connectWalletBtn" onclick="connectWallet()">Connect wallet</button></p>
+        <button onclick="setInvestment(0.05)">0.1 ETH</button>
         <button onclick="setInvestment(0.1)">0.1 ETH</button>
-        <button onclick="setInvestment(0.3)">0.3 ETH</button>
         <button onclick="setInvestment(0.5)">0.5 ETH</button>
         <button onclick="setInvestment(1)">1 ETH</button>
         <div class="progress-bar">
@@ -123,7 +134,7 @@
         </div>
         <p>Total raised: <span id="totalRaised">1286</span> ETH</p>
         <p id="walletAddress"></p>
-        <p>Note: Make sure to double-check the wallet address before sending ETH. We are not responsible for any incorrect transactions.</p>
+        <p>Note: We are not responsible for any incorrect transactions.</p>
     </div>
 
     <script>
