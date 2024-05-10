@@ -15,15 +15,15 @@
         }
 
         .container {
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 500px;
+            margin: 40px;
             padding: 40px;
             text-align: center;
             background-color: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border-radius: 25px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            position: relative;
+            position: center;
             overflow: hidden;
         }
 
@@ -130,8 +130,7 @@
         <button onclick="setInvestment(0.5)">0.5 ETH</button>
         <button onclick="setInvestment(1)">1 ETH</button>
         <button onclick="setInvestment(3)">3 ETH</button>
-        <button onclick="setInvestment(5)">5 ETH</button>
-        <div class="progress-bar">
+        <button onclick="setInvestment(5)">5 ETH</button>        <div class="progress-bar">
             <div class="progress-bar-fill" id="progressBarFill"></div>
         </div>
         <p>Total raised: <span id="totalRaised">1286</span> ETH</p>
