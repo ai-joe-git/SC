@@ -115,14 +115,13 @@
         <p>'SpeakerCoin' Token Presale</p>
         <p>Please connect your Ethereum wallet to participate.</p>
         <style>
-            body {
-              background-image: url('download.webp');
-              background-size: cover;
-              background-position: center;
-              background-repeat: no-repeat;
-              background-attachment: fixed;
-            }
-          </style>
+body {
+  background-image: url('download.webp');
+  background-size: cover;
+  background-position: center 40px; /* Added vertical offset of 40px */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}          </style>
         
         <p><button id="connectWalletBtn" onclick="connectWallet()">Connect wallet</button></p>
         <button onclick="setInvestment(0.05)">0.05 ETH</button>
