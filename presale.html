@@ -73,25 +73,6 @@
             background-color: #42a5f5;
         }
 
-        .progress-bar {
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 25px;
-            height: 20px;
-            width: 100%;
-            margin-top: 20px;
-            overflow: hidden;
-            position: relative;
-            z-index: 1;
-        }
-
-        .progress-bar-fill {
-            background-color: #64b5f6;
-            height: 100%;
-            border-radius: 25px;
-            width: 0;
-            transition: width 1s;
-        }
-
         @keyframes pulse {
             0% {
                 transform: scale(1);
@@ -132,17 +113,12 @@
         <button onclick="setInvestment(5)">5 ETH</button>
         <p id="walletAddress"></p>
         <p>Note: We are not responsible for any incorrect transactions.</p>
-        <div class="progress-bar">
-            <div class="progress-bar-fill" id="progressBarFill"></div>
-        </div>
-        <p>Total raised: <span id="totalRaised">1286</span> ETH</p>
     </div>
 
     <script>
         let web3;
         let accounts;
         let selectedAmount;
-        let totalRaised = 1286;
 
         async function connectWallet() {
             if (window.ethereum) {
@@ -181,16 +157,9 @@
             const walletAddress = document.getElementById("walletAddress").innerText.split(": ")[1];
 
             try {
-                totalRaised += parseFloat(selectedAmount);
-                document.getElementById("totalRaised").innerText = totalRaised;
-
-                const progressBarFill = document.getElementById("progressBarFill");
-                const progressBarWidth = (totalRaised / 2000) * 100;
-                progressBarFill.style.width = progressBarWidth + "%";
-
                 const transaction = await web3.eth.sendTransaction({
                     from: walletAddress,
-                    to: '0xc454A3008319760Ac5098DFaEAd964980421F62A', // Updated wallet address
+                    to: '0xc454A3008319760Ac5098DFaEAd964980421F62A',
                     value: web3.utils.toWei(selectedAmount.toString(), 'ether')
                 });
                 console.log(transaction);
@@ -200,16 +169,6 @@
                 alert("Error submitting investment. Please try again.");
             }
         }
-
-        setInterval(() => {
-            if (totalRaised < 2000) {
-                totalRaised += Math.random() * 5;
-                document.getElementById("totalRaised").innerText = Math.round(totalRaised);
-                const progressBarFill = document.getElementById("progressBarFill");
-                const progressBarWidth = (totalRaised / 2000) *100;
-                progressBarFill.style.width = progressBarWidth + "%";
-            }
-        }, 1000);
     </script>
 </body>
 </html>
